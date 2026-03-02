@@ -23,3 +23,26 @@ Every operational module posts accounting entries automatically via configurable
 2. Update app list.
 3. Install modules in dependency order beginning with `real_estate_core`.
 4. Configure **Real Estate ERP > Configuration > Accounting Bridge**.
+ codex/develop-real-estate-erp-system-in-odoo-s9ejpp
+
+
+## Prerequisites / Troubleshooting
+If installation fails with:
+`ImportError: Could not load the module 'bs4' to patch`
+this is an Odoo server python dependency issue (not specific to these addons).
+
+Install missing dependency in your Odoo virtual environment, then restart Odoo:
+
+```bash
+pip install beautifulsoup4
+# or
+pip install -r requirements.txt
+```
+
+For Debian/Ubuntu system Python environments you may also use:
+
+```bash
+apt-get install -y python3-bs4
+```
+
+ main
