@@ -43,3 +43,20 @@ For Debian/Ubuntu system Python environments you may also use:
 ```bash
 apt-get install -y python3-bs4
 ```
+
+
+## GitHub Merge Conflict Notes
+If you see many conflicts across Odoo XML/CSV metadata files in GitHub, this repository uses
+`merge=union` via `.gitattributes` to reduce non-overlapping conflicts when merging branches.
+
+If your branch still shows conflicts, update it on your machine and re-push:
+
+```bash
+git fetch origin
+git checkout <your-branch>
+git merge origin/main
+# resolve remaining true conflicts, then
+git add .
+git commit
+ git push
+```
