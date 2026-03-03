@@ -24,10 +24,12 @@ Every operational module posts accounting entries automatically via configurable
 3. Install modules in dependency order beginning with `real_estate_core`.
 4. Configure **Real Estate ERP > Configuration > Accounting Bridge**.
 
+
  codex/develop-real-estate-erp-system-in-odoo-6i28zi
 
  codex/develop-real-estate-erp-system-in-odoo-s9ejpp
  main
+
 
 
 
@@ -49,6 +51,8 @@ For Debian/Ubuntu system Python environments you may also use:
 ```bash
 apt-get install -y python3-bs4
 ```
+
+
 
 
 
@@ -114,6 +118,26 @@ git rebase --continue
 - بعد الحل شغّل فحص سريع:
 ```bash
 python -m compileall real_estate_core real_estate_land real_estate_project_wip real_estate_units real_estate_sales real_estate_rental real_estate_procurement real_estate_property real_estate_accounting_bridge real_estate_reports real_estate_security
+```
+
+
+
+## Important: Avoid silent XML corruption in merges
+If XML files were merged with `merge=union`, Git may create invalid XML (duplicate/misaligned tags)
+without conflict markers. This can cause errors like:
+`XMLSyntaxError: Opening and ending tag mismatch`.
+
+Use default merge behavior for XML (current `.gitattributes`), then validate before push:
+
+```bash
+python - <<'PY2'
+from pathlib import Path
+from lxml import etree
+for f in Path('.').rglob('*.xml'):
+    if 'real_estate_' in str(f):
+        etree.parse(str(f))
+print('all real_estate xml files are valid')
+PY2
 ```
 
  codex/develop-real-estate-erp-system-in-odoo-6i28zi

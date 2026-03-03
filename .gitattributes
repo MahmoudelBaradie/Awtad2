@@ -1,3 +1,4 @@
+
 # Reduce frequent merge conflicts in generated/verbose Odoo metadata files
 *.xml merge=union
 *.csv merge=union

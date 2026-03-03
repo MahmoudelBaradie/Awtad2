@@ -1,4 +1,5 @@
 <odoo>
+
     <record id="seq_real_estate_land" model="ir.sequence">
         <field name="name">Land Sequence</field>
         <field name="code">real.estate.land</field>

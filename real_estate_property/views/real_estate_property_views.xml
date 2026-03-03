@@ -1,3 +1,5 @@
 
+
 <odoo><record id="view_re_property_tree" model="ir.ui.view"><field name="name">re.property.tree</field><field name="model">real.estate.property.asset</field><field name="arch" type="xml"><tree><field name="name"/><field name="unit_id"/><field name="acquisition_cost"/><field name="monthly_depreciation"/></tree></field></record><record id="view_re_property_form" model="ir.ui.view"><field name="name">re.property.form</field><field name="model">real.estate.property.asset</field><field name="arch" type="xml"><form><sheet><group><field name="name"/><field name="unit_id"/><field name="acquisition_cost"/><field name="useful_life_years"/><field name="monthly_depreciation" readonly="1"/></group></sheet></form></field></record><record id="action_re_property" model="ir.actions.act_window"><field name="name">Investment Properties</field><field name="res_model">real.estate.property.asset</field><field name="view_mode">tree,form</field></record><menuitem id="menu_re_property" parent="real_estate_core.menu_real_estate_root" name="Property" action="action_re_property"/></odoo>
+
 

@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="view_real_estate_land_tree" model="ir.ui.view">
         <field name="name">real.estate.land.tree</field>
         <field name="model">real.estate.land</field>
