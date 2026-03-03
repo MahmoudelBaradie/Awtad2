@@ -1,6 +1,7 @@
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
+
 class RealEstateProject(models.Model):
     _name='real.estate.project'
     _inherit=['mail.thread']
@@ -17,9 +18,11 @@ class RealEstateProject(models.Model):
     analytic_account_id=fields.Many2one('account.analytic.account',readonly=True)
     cost_line_ids=fields.One2many('real.estate.project.cost','project_id')
 
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
+
             if vals.get('name','New')=='New':
                 vals['name']=self.env['ir.sequence'].next_by_code('real.estate.project') or 'New'
         recs=super().create(vals_list)
@@ -69,6 +72,7 @@ class RealEstateProjectCost(models.Model):
             move=self.env['account.move'].create({'move_type':'entry','journal_id':config.default_journal_id.id,'line_ids':[
                 (0,0,{'name':rec.project_id.name,'account_id':config.wip_account_id.id,'debit':rec.amount,'credit':0,'analytic_distribution':{str(rec.project_id.analytic_account_id.id):100}}),
                 (0,0,{'name':rec.project_id.name,'account_id':config.retention_payable_account_id.id,'debit':0,'credit':rec.amount}),
+
             ]})
             move.action_post()
         return records

@@ -25,10 +25,12 @@ Every operational module posts accounting entries automatically via configurable
 4. Configure **Real Estate ERP > Configuration > Accounting Bridge**.
 
 
+
  codex/develop-real-estate-erp-system-in-odoo-6i28zi
 
  codex/develop-real-estate-erp-system-in-odoo-s9ejpp
  main
+
 
 
 
@@ -51,6 +53,8 @@ For Debian/Ubuntu system Python environments you may also use:
 ```bash
 apt-get install -y python3-bs4
 ```
+
+
 
 
 
@@ -122,6 +126,7 @@ python -m compileall real_estate_core real_estate_land real_estate_project_wip r
 
 
 
+
 ## Important: Avoid silent XML corruption in merges
 If XML files were merged with `merge=union`, Git may create invalid XML (duplicate/misaligned tags)
 without conflict markers. This can cause errors like:
@@ -140,7 +145,9 @@ print('all real_estate xml files are valid')
 PY2
 ```
 
+
  codex/develop-real-estate-erp-system-in-odoo-6i28zi
+
 
 
 

@@ -1,3 +1,4 @@
+
 from odoo import fields, models
 
 class RealEstateContractorContract(models.Model):
@@ -26,3 +27,4 @@ class RealEstateContractorContract(models.Model):
             move.action_post()
             rec.billed_amount += rec.contract_value
             rec.state='active'
+
