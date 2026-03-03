@@ -60,3 +60,51 @@ git add .
 git commit
  git push
 ```
+
+## حل الكونفلكت خطوة بخطوة (Arabic)
+إذا ظهر Conflict في GitHub (خصوصًا في ملفات `*.xml` و `*.csv`) استخدم الخطوات التالية محليًا:
+
+```bash
+git fetch origin
+git checkout <your-branch>
+git pull --rebase origin <your-branch>
+git merge origin/main
+```
+
+### 1) اعرف الملفات المتعارضة
+```bash
+git status
+```
+
+### 2) حل تعارضات XML/CSV بسرعة (عند كونها إضافات non-overlapping)
+> قبل التنفيذ راجع التغييرات للتأكد أنها ليست متضاربة منطقيًا.
+
+```bash
+# خذ نسخة الفرع الحالي لكل ملفات XML/CSV المتعارضة
+git checkout --ours -- '*.xml' '*.csv'
+# أو خذ نسخة main
+# git checkout --theirs -- '*.xml' '*.csv'
+
+git add '*.xml' '*.csv'
+```
+
+### 3) أكمل الدمج
+```bash
+git add .
+git commit -m "Resolve merge conflicts"
+git push
+```
+
+### 4) لو كنت تعمل Rebase بدل Merge
+```bash
+git rebase --continue
+# كرر حتى ينتهي
+```
+
+### ملاحظات مهمة
+- إعداد `.gitattributes` الحالي يساعد على تقليل الكونفلكت لكنه لا يلغي كل التعارضات 100%.
+- إذا كان نفس السطر اتعدل في فرعين بشكل مختلف، لازم حل يدوي.
+- بعد الحل شغّل فحص سريع:
+```bash
+python -m compileall real_estate_core real_estate_land real_estate_project_wip real_estate_units real_estate_sales real_estate_rental real_estate_procurement real_estate_property real_estate_accounting_bridge real_estate_reports real_estate_security
+```
