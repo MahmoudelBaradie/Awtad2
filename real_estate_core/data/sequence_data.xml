@@ -1,41 +1,21 @@
 <odoo>
-    <data>
-            <record id="seq_real_estate_land" model="ir.sequence">
-                <field name="name">Land Sequence</field>
-                <field name="code">real.estate.land</field>
-                <field name="prefix">LAND/%(year)s/</field>
-                <field name="padding">4</field>
-            </record>
-            <record id="seq_real_estate_project" model="ir.sequence">
-                <field name="name">Project Sequence</field>
-                <field name="code">real.estate.project</field>
-                <field name="prefix">PROJ/%(year)s/</field>
-                <field name="padding">4</field>
-            </record>
-            <record id="seq_real_estate_unit" model="ir.sequence">
-                <field name="name">Unit Sequence</field>
-                <field name="code">real.estate.unit</field>
-                <field name="prefix">UNIT/%(year)s/</field>
-                <field name="padding">5</field>
-            </record>
+    <record id="seq_real_estate_land" model="ir.sequence">
+        <field name="name">Land Sequence</field>
+        <field name="code">real.estate.land</field>
+        <field name="prefix">LAND/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+    <record id="seq_real_estate_project" model="ir.sequence">
+        <field name="name">Project Sequence</field>
+        <field name="code">real.estate.project</field>
+        <field name="prefix">PROJ/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+    <record id="seq_real_estate_unit" model="ir.sequence">
+        <field name="name">Unit Sequence</field>
+        <field name="code">real.estate.unit</field>
+        <field name="prefix">UNIT/%(year)s/</field>
+        <field name="padding">5</field>
+    </record>
 
-        <record id="seq_real_estate_sale" model="ir.sequence">
-            <field name="name">Sale Sequence</field>
-            <field name="code">real.estate.sale</field>
-            <field name="prefix">SALE/%(year)s/</field>
-            <field name="padding">5</field>
-        </record>
-        <record id="seq_real_estate_rental" model="ir.sequence">
-            <field name="name">Rental Sequence</field>
-            <field name="code">real.estate.rental</field>
-            <field name="prefix">RENT/%(year)s/</field>
-            <field name="padding">5</field>
-        </record>
-        <record id="seq_real_estate_contract" model="ir.sequence">
-            <field name="name">Contractor Contract Sequence</field>
-            <field name="code">real.estate.contractor.contract</field>
-            <field name="prefix">CONT/%(year)s/</field>
-            <field name="padding">5</field>
-        </record>
-    </data>
 </odoo>

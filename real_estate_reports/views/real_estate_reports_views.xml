@@ -1,9 +1,10 @@
 <odoo>
-    <data>
-        <record id="action_re_profitability_report" model="ir.actions.act_window"><field name="name">Project Profitability</field><field name="res_model">real.estate.project</field><field name="view_mode">tree,pivot,graph</field></record>
-        <record id="action_re_unit_profitability_report" model="ir.actions.act_window"><field name="name">Unit Profitability</field><field name="res_model">real.estate.unit</field><field name="view_mode">tree,pivot,graph</field></record>
-        <menuitem id="menu_re_reports" parent="real_estate_core.menu_real_estate_root" name="Reports"/>
-        <menuitem id="menu_re_project_profitability" parent="menu_re_reports" name="Project Profitability" action="action_re_profitability_report"/>
-        <menuitem id="menu_re_unit_profitability" parent="menu_re_reports" name="Unit Profitability" action="action_re_unit_profitability_report"/>
-    </data>
+
+<record id="action_re_profitability_report" model="ir.actions.act_window"><field name="name">Project Profitability</field><field name="res_model">real.estate.project</field><field name="view_mode">tree,pivot,graph</field></record>
+<record id="action_re_unit_profitability_report" model="ir.actions.act_window"><field name="name">Unit Profitability</field><field name="res_model">real.estate.unit</field><field name="view_mode">tree,pivot,graph</field></record>
+<menuitem id="menu_re_reports" parent="real_estate_core.menu_real_estate_root" name="Reports"/>
+<menuitem id="menu_re_project_profitability" parent="menu_re_reports" name="Project Profitability" action="action_re_profitability_report"/>
+<menuitem id="menu_re_unit_profitability" parent="menu_re_reports" name="Unit Profitability" action="action_re_unit_profitability_report"/>
+
+
 </odoo>
