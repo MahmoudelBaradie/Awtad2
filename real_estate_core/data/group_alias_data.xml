@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Compatibility aliases for environments that still reference old xmlids under real_estate_security.* -->
+        <record id="imd_alias_security_group_accountant" model="ir.model.data">
+            <field name="module">real_estate_security</field>
+            <field name="name">group_real_estate_accountant</field>
+            <field name="model">res.groups</field>
+            <field name="res_id" ref="real_estate_core.group_real_estate_accountant"/>
+            <field name="noupdate" eval="True"/>
+        </record>
+
+        <record id="imd_alias_security_group_project_manager" model="ir.model.data">
+            <field name="module">real_estate_security</field>
+            <field name="name">group_real_estate_project_manager</field>
+            <field name="model">res.groups</field>
+            <field name="res_id" ref="real_estate_core.group_real_estate_project_manager"/>
+            <field name="noupdate" eval="True"/>
+        </record>
+
+        <record id="imd_alias_security_group_sales_manager" model="ir.model.data">
+            <field name="module">real_estate_security</field>
+            <field name="name">group_real_estate_sales_manager</field>
+            <field name="model">res.groups</field>
+            <field name="res_id" ref="real_estate_core.group_real_estate_sales_manager"/>
+            <field name="noupdate" eval="True"/>
+        </record>
+
+        <record id="imd_alias_security_group_general_manager" model="ir.model.data">
+            <field name="module">real_estate_security</field>
+            <field name="name">group_real_estate_general_manager</field>
+            <field name="model">res.groups</field>
+            <field name="res_id" ref="real_estate_core.group_real_estate_general_manager"/>
+            <field name="noupdate" eval="True"/>
+        </record>
+    </data>
+</odoo>
