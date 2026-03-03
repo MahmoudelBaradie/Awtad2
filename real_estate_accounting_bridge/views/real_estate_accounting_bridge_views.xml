@@ -1,11 +1,9 @@
 <odoo>
-    <data>
-            <record id="view_re_accounting_bridge_search" model="ir.ui.view">
-                <field name="name">real.estate.company.config.search</field>
-                <field name="model">real.estate.company.config</field>
-                <field name="arch" type="xml">
-                    <search><field name="company_id"/></search>
-                </field>
-            </record>
-    </data>
+    <record id="view_re_accounting_bridge_search" model="ir.ui.view">
+        <field name="name">real.estate.company.config.search</field>
+        <field name="model">real.estate.company.config</field>
+        <field name="arch" type="xml">
+            <search><field name="company_id"/></search>
+        </field>
+    </record>
 </odoo>

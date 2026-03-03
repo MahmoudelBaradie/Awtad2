@@ -24,6 +24,12 @@ Every operational module posts accounting entries automatically via configurable
 3. Install modules in dependency order beginning with `real_estate_core`.
 4. Configure **Real Estate ERP > Configuration > Accounting Bridge**.
 
+ codex/develop-real-estate-erp-system-in-odoo-6i28zi
+
+ codex/develop-real-estate-erp-system-in-odoo-s9ejpp
+ main
+
+
 
 ## Prerequisites / Troubleshooting
 If installation fails with:
@@ -43,6 +49,7 @@ For Debian/Ubuntu system Python environments you may also use:
 ```bash
 apt-get install -y python3-bs4
 ```
+
 
 
 ## GitHub Merge Conflict Notes
@@ -108,3 +115,8 @@ git rebase --continue
 ```bash
 python -m compileall real_estate_core real_estate_land real_estate_project_wip real_estate_units real_estate_sales real_estate_rental real_estate_procurement real_estate_property real_estate_accounting_bridge real_estate_reports real_estate_security
 ```
+
+ codex/develop-real-estate-erp-system-in-odoo-6i28zi
+
+
+
