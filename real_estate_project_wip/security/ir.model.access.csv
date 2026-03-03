@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_re_project_manager,access.re.project.manager,model_real_estate_project,real_estate_core.group_real_estate_project_manager,1,1,1,0
+access_re_project_cost_manager,access.re.project.cost.manager,model_real_estate_project_cost,real_estate_core.group_real_estate_project_manager,1,1,1,0
