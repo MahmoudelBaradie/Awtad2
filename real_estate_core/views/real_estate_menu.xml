@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="menu_real_estate_root" name="Real Estate ERP" sequence="10"/>
+    <menuitem id="menu_real_estate_configuration" parent="menu_real_estate_root" name="Configuration" sequence="900"/>
+</odoo>

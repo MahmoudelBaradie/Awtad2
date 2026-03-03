@@ -1,0 +1,1 @@
+{'name':'Real Estate Rental','version':'19.0.1.0.0','depends':['real_estate_units'],'data':['security/ir.model.access.csv','data/cron_data.xml','views/real_estate_rental_views.xml'],'license':'LGPL-3'}
