@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+            <record id="view_real_estate_company_config_form" model="ir.ui.view">
+                <field name="name">real.estate.company.config.form</field>
+                <field name="model">real.estate.company.config</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="default_journal_id"/>
+                            </group>
+                            <group string="Accounts">
+                                <field name="land_asset_account_id"/>
+                                <field name="wip_account_id"/>
+                                <field name="inventory_account_id"/>
+                                <field name="investment_property_account_id"/>
+                                <field name="cost_of_sales_account_id"/>
+                                <field name="sales_revenue_account_id"/>
+                                <field name="rental_revenue_account_id"/>
+                                <field name="security_deposit_account_id"/>
+                                <field name="retention_payable_account_id"/>
+                                <field name="cash_account_id"/>
+                                <field name="bank_account_id"/>
+                                <field name="payable_account_id"/>
+                                <field name="receivable_account_id"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record id="view_real_estate_company_config_tree" model="ir.ui.view">
+                <field name="name">real.estate.company.config.tree</field>
+                <field name="model">real.estate.company.config</field>
+                <field name="arch" type="xml">
+                    <tree>
+                        <field name="company_id"/>
+                        <field name="default_journal_id"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record id="action_real_estate_company_config" model="ir.actions.act_window">
+                <field name="name">Accounting Configuration</field>
+                <field name="res_model">real.estate.company.config</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <menuitem id="menu_real_estate_company_config" parent="menu_real_estate_configuration" name="Accounting Bridge" action="action_real_estate_company_config"/>
+    </data>
+</odoo>
