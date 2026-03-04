@@ -4,7 +4,10 @@ from odoo.exceptions import UserError
 
 class RealEstateLand(models.Model):
     _name = 'real.estate.land'
-    _inherit = ['real.estate.accounting.mixin', 'mail.thread', 'mail.activity.mixin']
+
+
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
     _description = 'Real Estate Land'
 
     name = fields.Char(default='New', tracking=True)
@@ -39,21 +42,21 @@ class RealEstateLand(models.Model):
         for rec in self:
             rec.area_sqm = rec.area * factor.get(rec.area_uom, 1)
 
+
+
+    def _get_config(self):
+        config = self.env['real.estate.company.config'].search([('company_id', '=', self.env.company.id)], limit=1)
+        if not config:
+            raise UserError(_('Please configure Real Estate accounting accounts first.'))
+        return config
+
     def action_confirm(self):
-        for rec in self.filtered(lambda r: r.state == 'draft'):
-            config = rec._get_re_company_config()
-            if not rec.analytic_account_id:
-                plan = rec._get_re_analytic_plan()
-                rec.analytic_account_id = self.env['account.analytic.account'].create({'name': rec.name, 'plan_id': plan.id}).id
-
-            credit_account = {
-                'cash': config.cash_account_id.id,
-                'bank': config.bank_account_id.id,
-                'payable': config.payable_account_id.id,
-            }.get(rec.payment_method)
-            if not credit_account:
-                raise UserError(_('Please select a valid payment method.'))
-
+        for rec in self:
+            if rec.state != 'draft':
+                continue
+            config = rec._get_config()
+            rec.analytic_account_id = self.env['account.analytic.account'].create({'name': rec.name, 'plan_id': self.env.ref('analytic.analytic_plan_projects').id}).id
+            credit_account = {'cash': config.cash_account_id.id, 'bank': config.bank_account_id.id, 'payable': config.payable_account_id.id}.get(rec.payment_method)
             line_vals = [
                 (0, 0, {'name': rec.name, 'account_id': config.land_asset_account_id.id, 'debit': rec.total_land_cost, 'credit': 0.0, 'analytic_distribution': {str(rec.analytic_account_id.id): 100}}),
                 (0, 0, {'name': rec.name, 'account_id': credit_account, 'debit': 0.0, 'credit': rec.total_land_cost}),

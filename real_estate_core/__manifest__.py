@@ -5,7 +5,7 @@
     'depends': ['base', 'mail', 'analytic', 'account'],
     'data': [
         'security/real_estate_core_security.xml',
-        'data/group_alias_data.xml',
+
         'security/ir.model.access.csv',
         'data/sequence_data.xml',
         'views/real_estate_menu.xml',

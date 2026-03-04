@@ -25,6 +25,16 @@ Every operational module posts accounting entries automatically via configurable
 4. Configure **Real Estate ERP > Configuration > Accounting Bridge**.
 
 
+
+
+ codex/develop-real-estate-erp-system-in-odoo-6i28zi
+
+ codex/develop-real-estate-erp-system-in-odoo-s9ejpp
+
+
+
+
+
 ## Prerequisites / Troubleshooting
 If installation fails with:
 `ImportError: Could not load the module 'bs4' to patch`
@@ -43,6 +53,13 @@ For Debian/Ubuntu system Python environments you may also use:
 ```bash
 apt-get install -y python3-bs4
 ```
+
+
+
+
+
+
+
 
 
 ## GitHub Merge Conflict Notes
@@ -110,6 +127,8 @@ python -m compileall real_estate_core real_estate_land real_estate_project_wip r
 ```
 
 
+
+
 ## Important: Avoid silent XML corruption in merges
 If XML files were merged with `merge=union`, Git may create invalid XML (duplicate/misaligned tags)
 without conflict markers. This can cause errors like:
@@ -129,38 +148,8 @@ PY2
 ```
 
 
-## Quick XML sanity check before Odoo upgrade
-Run this before installing/upgrading modules on the server to catch malformed XML early:
 
-```bash
-python scripts/validate_real_estate_xml.py
-```
+ codex/develop-real-estate-erp-system-in-odoo-6i28zi
 
 
-## Fix for: No matching record found for external id `real_estate_security.group_*`
-If your server still shows this error during install/upgrade, it usually means your deployed branch still has old
-references or mixed commits.
 
-This repository now includes compatibility aliases for `real_estate_security.group_*` -> `real_estate_core.group_*`.
-After pulling latest commits:
-
-```bash
-python scripts/validate_real_estate_xml.py
-# restart odoo service
-# then upgrade modules from Apps (or -u real_estate_core,real_estate_units)
-```
-
-
-## Check deployment mismatch (legacy group xmlids)
-If your server still throws errors containing:
-`real_estate_security.group_real_estate_*`
-it means deployed files are older/mixed.
-
-Run before restart:
-
-```bash
-python scripts/check_legacy_group_xmlids.py
-```
-
-If script fails, pull latest branch and make sure these access files reference
-`real_estate_core.group_*` only.
