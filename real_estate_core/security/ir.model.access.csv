@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_re_company_config_accountant,access.re.company.config.accountant,model_real_estate_company_config,base.group_user,1,1,1,0
+access_re_company_config_gm,access.re.company.config.gm,model_real_estate_company_config,base.group_user,1,1,1,1
