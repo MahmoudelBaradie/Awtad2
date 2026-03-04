@@ -26,10 +26,10 @@ Every operational module posts accounting entries automatically via configurable
 
 
 
+
  codex/develop-real-estate-erp-system-in-odoo-6i28zi
 
  codex/develop-real-estate-erp-system-in-odoo-s9ejpp
- main
 
 
 
@@ -53,6 +53,8 @@ For Debian/Ubuntu system Python environments you may also use:
 ```bash
 apt-get install -y python3-bs4
 ```
+
+
 
 
 
@@ -146,8 +148,8 @@ PY2
 ```
 
 
- codex/develop-real-estate-erp-system-in-odoo-6i28zi
 
+ codex/develop-real-estate-erp-system-in-odoo-6i28zi
 
 
 

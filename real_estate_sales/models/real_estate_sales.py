@@ -47,3 +47,4 @@ class RealEstateSale(models.Model):
             move.action_post()
             rec.state='posted'
             rec.unit_id.status='sold'
+

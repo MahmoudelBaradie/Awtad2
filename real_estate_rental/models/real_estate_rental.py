@@ -1,4 +1,5 @@
 
+
 from odoo import fields, models
 
 class RealEstateRental(models.Model):

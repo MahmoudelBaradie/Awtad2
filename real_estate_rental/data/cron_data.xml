@@ -7,5 +7,4 @@
 <field name="code">model.cron_generate_rent_entries()</field>
 <field name="interval_number">1</field><field name="interval_type">months</field>
 </record>
-
 </odoo>

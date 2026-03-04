@@ -6,7 +6,6 @@
     'data': [
         'security/real_estate_core_security.xml',
 
-
         'security/ir.model.access.csv',
         'data/sequence_data.xml',
         'views/real_estate_menu.xml',

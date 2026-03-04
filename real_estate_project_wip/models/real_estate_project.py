@@ -19,6 +19,7 @@ class RealEstateProject(models.Model):
     cost_line_ids=fields.One2many('real.estate.project.cost','project_id')
 
 
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:

@@ -1,4 +1,5 @@
 
+
 <odoo>
         <field name="category_id" ref="base.module_category_accounting_accounting"/>
     </record>

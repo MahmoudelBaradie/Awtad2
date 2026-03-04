@@ -28,3 +28,4 @@ class RealEstateContractorContract(models.Model):
             rec.billed_amount += rec.contract_value
             rec.state='active'
 
+

@@ -5,6 +5,7 @@ from odoo.exceptions import UserError
 class RealEstateLand(models.Model):
     _name = 'real.estate.land'
 
+
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     _description = 'Real Estate Land'
@@ -40,6 +41,7 @@ class RealEstateLand(models.Model):
         factor = {'sqm': 1, 'qirat': 175.0, 'feddan': 4200.0}
         for rec in self:
             rec.area_sqm = rec.area * factor.get(rec.area_uom, 1)
+
 
 
     def _get_config(self):
