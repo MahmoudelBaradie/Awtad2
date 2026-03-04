@@ -1,6 +1,4 @@
-# Odoo metadata merge strategy
-# Keep default merge for XML so Git surfaces real conflicts instead of silently producing invalid XML.
+# Stable line endings only (no custom merge drivers)
 *.xml text eol=lf
-
-# CSV metadata can usually be merged additively.
-*.csv merge=union
+*.csv text eol=lf
+*.py  text eol=lf

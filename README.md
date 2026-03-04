@@ -170,3 +170,26 @@ If script fails, pull latest branch and make sure these access files reference
 To avoid installation failures caused by missing custom group XMLIDs on mixed deployments,
 ACL CSV files currently use `base.group_user` as a stable default group.
 You can later re-introduce fine-grained custom role groups after environment stabilization.
+
+
+## Simple Stable Mode (recommended when conflicts are heavy)
+Use this minimal/stable strategy to avoid merge and install friction:
+
+1. Keep `.gitattributes` with line-ending normalization only (no custom merge drivers).
+2. Install modules in this order:
+   - `real_estate_core`
+   - `real_estate_land`
+   - `real_estate_project_wip`
+   - `real_estate_units`
+   - `real_estate_sales`
+   - `real_estate_rental`
+   - `real_estate_procurement`
+   - `real_estate_property`
+   - `real_estate_reports`
+3. Treat `real_estate_security` as optional until environment is stable.
+4. Run validation before upgrade:
+
+```bash
+python scripts/validate_real_estate_xml.py
+python scripts/check_legacy_group_xmlids.py
+```
