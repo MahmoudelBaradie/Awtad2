@@ -1,0 +1,2 @@
+# Runtime python deps required by Odoo 19 base/community addons used during module loading
+beautifulsoup4>=4.12.0
